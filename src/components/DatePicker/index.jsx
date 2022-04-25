@@ -26,6 +26,13 @@ const CalendarDatePickerCs = () => {
 ];
   // check window innerWidth
   useEffect(() => {
+    createMomentsSDK({
+      title: "My App",
+      icon: "icon url",
+      isFragile: true,
+    }).then((mSdK) => {
+      momentsSDK=mSdK
+    });
     function checkWidth() {
       setScreenSize(window.innerWidth);
     }
@@ -45,8 +52,10 @@ const CalendarDatePickerCs = () => {
     //   isFragile: true,
     // }).then((momentsSDK) => {
       // console.log(momentsSDK)
+      if(momentsSDK){
       momentsSDK.sendMessage({ text: x });
       momentsSDK.close();
+      }
     // });
   };
 
