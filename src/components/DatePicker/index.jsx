@@ -12,6 +12,17 @@ const CalendarDatePickerCs = () => {
       key: "selection",
     },
   ]);
+  let momentsSDK;
+  createMomentsSDK({
+    title: "My App",
+    icon: "icon url",
+    isFragile: true,
+  }).then((mSdK) => {
+    momentsSDK=mSdK
+    // console.log(momentsSDK)
+    //momentsSDK.sendMessage({ text: x });
+   // momentsSDK.close();
+  });
   const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
@@ -30,15 +41,15 @@ const CalendarDatePickerCs = () => {
     console.log(state)
     let x=`${monthNames[state[0].startDate.getMonth()]} ${state[0].startDate.getDate()} - ${monthNames[state[0].endDate.getMonth()]} ${state[0].endDate.getDate()}`
     console.log(x)
-    createMomentsSDK({
-      title: "My App",
-      icon: "icon url",
-      isFragile: true,
-    }).then((momentsSDK) => {
+    // createMomentsSDK({
+    //   title: "My App",
+    //   icon: "icon url",
+    //   isFragile: true,
+    // }).then((momentsSDK) => {
       // console.log(momentsSDK)
       momentsSDK.sendMessage({ text: x });
       momentsSDK.close();
-    });
+    // });
   };
 
   console.log("==========", state);
