@@ -8,7 +8,7 @@ const CalendarDatePickerCs = () => {
   const [state, setState] = useState([
     {
       startDate: new Date(),
-      endDate: null,
+      endDate: new Date(),
       key: "selection",
     },
   ]);
@@ -55,9 +55,7 @@ const CalendarDatePickerCs = () => {
             rangeColors={["#335D65"]}
             color={"#335D65"}
             disabledDates={[
-              addDays(new Date(), 7),
-              new Date("april 29 2022"),
-              addDays(new Date(), 14),
+              new Date("april 29 2022")
             ]}
             editableDateInputs={true}
             onChange={(item) => setState([item.selection])}
