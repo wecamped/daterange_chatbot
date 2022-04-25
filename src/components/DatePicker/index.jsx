@@ -4,6 +4,14 @@ import { DateRange } from "react-date-range";
 import createMomentsSDK from "@livechat/moments-sdk";
 
 const CalendarDatePickerCs = () => {
+  let momentsSDK;
+  createMomentsSDK({
+    title: "My App",
+    icon: "icon url",
+    isFragile: true,
+  }).then((mSdK) => {
+    momentsSDK=mSdK
+  });
   const [screenSize, setScreenSize] = useState(window.innerWidth);
   const [state, setState] = useState([
     {
@@ -12,17 +20,7 @@ const CalendarDatePickerCs = () => {
       key: "selection",
     },
   ]);
-  let momentsSDK;
-  createMomentsSDK({
-    title: "My App",
-    icon: "icon url",
-    isFragile: true,
-  }).then((mSdK) => {
-    momentsSDK=mSdK
-    // console.log(momentsSDK)
-    //momentsSDK.sendMessage({ text: x });
-   // momentsSDK.close();
-  });
+  
   const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
