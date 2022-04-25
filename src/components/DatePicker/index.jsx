@@ -58,8 +58,6 @@ const CalendarDatePickerCs = () => {
   return (
     <section>
       <div className="cs_container text_center">
-        <h2 className="sec_heading">Date Range Picker.</h2>
-        <hr />
         <div className="cs_date_picker_card">
           <DateRange
             showSelectionPreview={true}
@@ -81,7 +79,7 @@ const CalendarDatePickerCs = () => {
           />
           <div className="cs_row justify_content_end">
             <button className="cs_btn_main" onClick={getDatePick}>
-              Finish
+              Select
             </button>
           </div>
         </div>
