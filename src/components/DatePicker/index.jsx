@@ -12,7 +12,9 @@ const CalendarDatePickerCs = () => {
       key: "selection",
     },
   ]);
-
+  const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
   // check window innerWidth
   useEffect(() => {
     function checkWidth() {
@@ -24,14 +26,17 @@ const CalendarDatePickerCs = () => {
 
   // get and send dates
   const getDatePick = () => {
-    let val = JSON.stringify(state);
+    
+    console.log(state)
+    let x=`${monthNames[state[0].startDate.getMonth()]} ${state[0].startDate.getDate()} - ${monthNames[state[0].endDate.getMonth()]} ${state[0].endDate.getDate()}`
+    console.log(x)
     createMomentsSDK({
       title: "My App",
       icon: "icon url",
       isFragile: true,
     }).then((momentsSDK) => {
       // console.log(momentsSDK)
-      momentsSDK.sendMessage({ text: val });
+      momentsSDK.sendMessage({ text: x });
       momentsSDK.close();
     });
   };
@@ -58,7 +63,7 @@ const CalendarDatePickerCs = () => {
               new Date("april 29 2022")
             ]}
             editableDateInputs={true}
-            onChange={(item) => setState([item.selection])}
+            onChange={(item) => {console.log([item.selection]);setState([item.selection])}}
             moveRangeOnFirstSelection={false}
             ranges={state}
           />
