@@ -50,8 +50,8 @@ const CalendarDatePickerCs = () => {
             direction={screenSize > 768 ? "horizontal" : "vertical"}
             preventSnapRefocus={true}
             calendarFocus="backwards"
-            // minDate={addDays(new Date(), 3)}
-            // // maxDate={addDays(new Date(), 3)}
+            minDate={addDays(new Date(), 3)}
+            maxDate={addDays(new Date(), 90)}
             rangeColors={["#335D65"]}
             color={"#335D65"}
             disabledDates={[
