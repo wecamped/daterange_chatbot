@@ -4,14 +4,8 @@ import { DateRange } from "react-date-range";
 import createMomentsSDK from "@livechat/moments-sdk";
 
 const CalendarDatePickerCs = () => {
-  let momentsSDK;
-  createMomentsSDK({
-    title: "My App",
-    icon: "icon url",
-    isFragile: true,
-  }).then((mSdK) => {
-    momentsSDK=mSdK
-  });
+  
+  const [momentsSDK, setmomentsSDK] = useState(null);
   const [screenSize, setScreenSize] = useState(window.innerWidth);
   const [state, setState] = useState([
     {
@@ -31,7 +25,7 @@ const CalendarDatePickerCs = () => {
       icon: "icon url",
       isFragile: true,
     }).then((mSdK) => {
-      momentsSDK=mSdK
+      setmomentsSDK(mSdK)
     });
     function checkWidth() {
       setScreenSize(window.innerWidth);
