@@ -51,7 +51,7 @@ body {
     border-radius: 12px;
     padding: 8px 15px 15px 15px;
     overflow: hidden;
-    margin: 50px auto;
+    margin: 20px auto;
     width: max-content;
     max-width: 100%;
     background-color: var(--light)
